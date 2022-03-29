@@ -71,6 +71,8 @@ import { CoursesService } from "./courses.service";
       <li>Price is: {{ course.price | currency:"INR":true:"3.2-2" }}</li>
       <li>Release Date is: {{ course.releaseDate | date:"shortDate" }}</li>
     </ul>
+    <h2>Below is the use of my custom made pipe</h2>
+    <p> {{ text | summary }} </p>
   `,
 })
 
@@ -91,6 +93,12 @@ export class CoursesComponent {
   email: string = "foo@gmail.com";
   emailTwo: string = "bar@gmail.com";
   course: any;
+  text: string = `
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid perspiciatis 
+    ex voluptas iure, cupiditate, modi atque eaque, placeat in commodi 
+    natus laudantium eius? Corrupti quos dolorem asperiores praesentium 
+    repudiandae quaerat.
+  `;
   constructor(
     // When I pass service: CoursesService as a constructor's dependency,
     // I want angular to inject an instance of service into this class

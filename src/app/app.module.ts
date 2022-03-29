@@ -11,6 +11,7 @@ import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { AuthorsService } from './authors.service';
 import { AuthorsComponent } from './authors/authors.component';
+import { SummaryPipe } from './summary.pipe';
 
 // This is a way to convert a normal class to a ngModule
 @NgModule({
@@ -21,6 +22,7 @@ import { AuthorsComponent } from './authors/authors.component';
     // without using the ng-generate command, as this will generate an error
     CourseComponent, 
     AuthorsComponent, // This line of code was added by "ng g c course" command
+    SummaryPipe, // Add the pipe component
   ],
   imports: [
     BrowserModule,
