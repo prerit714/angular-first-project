@@ -3,3 +3,6 @@
   2. Apply classes / styles dynamically
   3. Format data using pipes
   4. Handle Events
+
+2. Add bootstrap with the following command
+  $ ?sudo npm install bootstrap --save
