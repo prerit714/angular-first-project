@@ -53,6 +53,9 @@ import { CoursesService } from "./courses.service";
     <input type="text" (keyup)="onKeyUpOne($event)"/>
       <br>
     <input type="text" (keyup.enter)="onKeyUpGetInputData($event)"/>
+      <br>
+    <!-- Using a template variable to reference an input field -->
+    <input type="text" #email (keyup.enter)="onKeyUpThree(email.value)" />
   `,
 })
 export class CoursesComponent {
@@ -124,5 +127,13 @@ export class CoursesComponent {
   onKeyUpTwo(): void {
     // There are two ways of handling key press events
     console.log("Enter was entered!");
+  }
+  onKeyUpThree(email: string): void {
+    // This is the most preferred way to capture a value from an input field
+    if (email.length === 0) {
+      console.log("Hey! you entered an empty string!");
+    } else {
+      console.log("You entered: ", email);
+    }
   }
 }
