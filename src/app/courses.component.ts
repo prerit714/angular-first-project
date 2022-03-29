@@ -72,7 +72,7 @@ import { CoursesService } from "./courses.service";
       <li>Release Date is: {{ course.releaseDate | date:"shortDate" }}</li>
     </ul>
     <h2> Below is the output of using a custom pipe</h2>
-    <p>{{ text | summary }}</p>
+    <p>{{ text | summary:20 }}</p>
   `,
 })
 
