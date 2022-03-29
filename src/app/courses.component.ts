@@ -11,6 +11,9 @@ import { CoursesService } from "./courses.service";
   // NOTE:
   // Interpolation works for rendering dynamic data and property binding
   // works well for rendering data that changes frequently
+  // NOTE:
+  //  While binding peoperties, remember to bind to a DOM property
+  //  instead of html-elements-attributes
   template: `
     <h2>Now to show an image</h2>
     <!-- Below is an example of string interpolation -->
@@ -30,6 +33,11 @@ import { CoursesService } from "./courses.service";
         {{ course }}
       </li>
     </ul>
+    <table>
+      <tr>
+        <td [attr.colspan]="colSpan">Just something</td>
+      </tr>
+    </table>
   `,
 })
 export class CoursesComponent {
@@ -42,7 +50,8 @@ export class CoursesComponent {
   // Define a field "title"
   title: string = "List of courses";
   imageUrl: string = "https://picsum.photos/400/";
-  courses: string[];
+  courses: string[] = [""];
+  colSpan: number = 2;
   constructor(
     // When I pass service: CoursesService as a constructor's dependency,
     // I want angular to inject an instance of service into this class
