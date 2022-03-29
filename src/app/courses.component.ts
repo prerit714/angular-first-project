@@ -116,7 +116,7 @@ export class CoursesComponent {
       console.log("Enter was pressed!", $event);
     }
   }
-  onKeyUpTwo() {
+  onKeyUpTwo(): void {
     // There are two ways of handling key press events
     console.log("Enter was entered!");
   }
