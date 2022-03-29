@@ -35,9 +35,12 @@ import { CoursesService } from "./courses.service";
     </ul>
     <table>
       <tr>
-        <td [attr.colspan]="colSpan">Just something</td>
+        <td [attr.colspan]="colSpan"></td>
       </tr>
     </table>
+    <h2> A primary button </h2>
+    <!-- Adding a bootstrap sytle to a button -->
+    <button class="btn btn-primary">A primary button</button>
   `,
 })
 export class CoursesComponent {
@@ -49,9 +52,10 @@ export class CoursesComponent {
   // Leaving this class empty for now 
   // Define a field "title"
   title: string = "List of courses";
-  imageUrl: string = "https://picsum.photos/400/";
+  imageUrl: string = "https://picsum.photos/500/";
   courses: string[] = [""];
   colSpan: number = 2;
+  buttonWidth: string = "100%";
   constructor(
     // When I pass service: CoursesService as a constructor's dependency,
     // I want angular to inject an instance of service into this class

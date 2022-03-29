@@ -6,3 +6,7 @@
 
 2. Add bootstrap with the following command
   $ ?sudo npm install bootstrap --save
+  --save flag adds bootstrap as a dependency in the package.json
+
+3. To test this code on a different machine, just do the following
+  $ ?sudo npm install
