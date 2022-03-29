@@ -71,8 +71,8 @@ import { CoursesService } from "./courses.service";
       <li>Price is: {{ course.price | currency:"INR":true:"3.2-2" }}</li>
       <li>Release Date is: {{ course.releaseDate | date:"shortDate" }}</li>
     </ul>
-    <h2>Below is the use of my custom made pipe</h2>
-    <p> {{ text | summary }} </p>
+    <h2> Below is the output of using a custom pipe</h2>
+    <p>{{ text | summary }}</p>
   `,
 })
 
