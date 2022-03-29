@@ -56,6 +56,11 @@ import { CoursesService } from "./courses.service";
       <br>
     <!-- Using a template variable to reference an input field -->
     <input type="text" #email (keyup.enter)="onKeyUpThree(email.value)" />
+      <br>
+    <!-- Let's use two-way binding to achieve the above -->
+    <!-- Bind the input using property binding first -->
+    <!-- Using banana in a box method [()] in old angular, in new angular use[]-->
+    <input type="text" [placeholder]="emailTwo" [(ngModel)]="emailTwo" (keyup.enter)="onKeyUpFour()" />
   `,
 })
 export class CoursesComponent {
@@ -72,6 +77,8 @@ export class CoursesComponent {
   colSpan: number = 2;
   buttonWidth: string = "100%";
   isActive: boolean = true;
+  email: string = "foo@gmail.com";
+  emailTwo: string = "bar@gmail.com";
   constructor(
     // When I pass service: CoursesService as a constructor's dependency,
     // I want angular to inject an instance of service into this class
@@ -94,6 +101,13 @@ export class CoursesComponent {
     //  To avoid this we must use something else...
     //  ie. Dependency Injection
     this.courses = service.getCourses();
+  }
+  onKeyUpFour(): void {
+    if (this.emailTwo.length === 0) {
+      console.log("Email length is 0");
+    } else {
+      console.log("You entered: ", this.emailTwo);
+    }
   }
   onKeyUpGetInputData($event: any): void {
     console.log($event.target.value);
@@ -136,4 +150,6 @@ export class CoursesComponent {
       console.log("You entered: ", email);
     }
   }
+  // Passing data is cool and all, but it would be better if I could just
+  // use something like this.email to access the email value (as per OOPS)
 }
