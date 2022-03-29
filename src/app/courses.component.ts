@@ -22,9 +22,24 @@ export class CoursesComponent {
   // Define a field "title"
   title: string = "List of courses";
   courses: string[];
-  constructor() {
+  constructor(
+    // When I pass service: CoursesService as a constructor's dependency,
+    // I want angular to inject an instance of service into this class
+    // so that I don't tightly couple this class with a service, this will
+    // help me a lot when I am faking a service to test the working of the  
+    // application using some methods later on in the future, now I must let 
+    // angular know to do this
+    service: CoursesService
+  ) {
     // using a service to initialize my courses field
-    let service = new CoursesService();
+    // const service = new CoursesService(); // get rid of this line, once
+    // you have told angular to inject an instance of service (as a dependency)
+    // PROBLEM:
+    //  Because we are directly creating instance of a service class here 
+    //  We have again made this component tightly coupled with the service
+    //  This will cause issues when we are testing our application 
+    //  To avoid this we must use something else...
+    //  ie. Dependency Injection
     this.courses = service.getCourses();
   }
   getTitle(): string {

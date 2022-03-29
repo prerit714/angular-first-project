@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 // Import my custom courses component
 import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
+import { CoursesService } from './courses.service';
 
 // This is a way to convert a normal class to a ngModule
 @NgModule({
@@ -21,7 +22,14 @@ import { CourseComponent } from './course/course.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  // in providers I must list all the dependencies the component in this module
+  // will depend upon
+  providers: [
+    // Since our courses component is dependent on service:CoursesService, I
+    // will list CoursesService as a dependency
+    // This is the second step after adding an instance in the constructor:CourseComponent
+    CoursesService, // If you forgot this step, dependency injection will not work!
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
