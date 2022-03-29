@@ -10,7 +10,10 @@ export class FavoriteComponent implements OnInit {
 
   // Task is to mark fields as input properties/output properties
   // We use Input decorator to make a field as an input property
-  @Input() isFavorite: boolean = false;
+  @Input(
+    //define an alias for this name
+    "is-favorite"
+  ) isFavorite: boolean = false;
 
   constructor() { }
 
