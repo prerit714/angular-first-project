@@ -44,6 +44,10 @@ import { CoursesService } from "./courses.service";
     <button class="btn btn-primary" [class.active]="isActive">First Button</button>
       <br>
     <button class="btn btn-secondary" [style.backgroundColor]="!isActive?'blue':'purple'">Second Button</button>
+      <br>
+    <div (click)="onDivClick($event)">
+      <button class="btn btn-secondary" (click)="onClickableButton($event)">Clickable Button</button>
+    </div>
   `,
 })
 export class CoursesComponent {
@@ -92,4 +96,16 @@ export class CoursesComponent {
   // logic, If you have to use an http-request to get some result
   // from a server/api, use angular services. A really good practice
   // that seperates UI logic and Business logic from each other.
+  // To see the $event object
+  onClickableButton($event: MouseEvent): void {
+    // handler of onClickableButton button
+    console.log("onClickableButton() is called!", $event);
+  }
+  onDivClick($event: MouseEvent) {
+    // div click handler
+    // An event bubbles up the dom tree to the parent element
+    // to avoid event bubbling, just call this method below
+    $event.stopPropagation(); // important if you want to avoid bubbling
+    console.log("onDivClick() is called!", $event);
+  }
 }
