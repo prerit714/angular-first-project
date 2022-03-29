@@ -8,8 +8,23 @@ import { CoursesService } from "./courses.service";
   // of title changes, the component is re-rendered
   // Any valid JS expression is allowed between {{}}
   // We use directives to manipulate the DOM
+  // NOTE:
+  // Interpolation works for rendering dynamic data and property binding
+  // works well for rendering data that changes frequently
   template: `
-    <h2>{{ "The title is: " + getTitle() }}</h2>
+    <h2>Now to show an image</h2>
+    <!-- Below is an example of string interpolation -->
+    <img src="{{ imageUrl }}"/>
+    <h2>Now to show it again</h2>
+    <!-- 
+      Below is an example of property binding 
+      More like, binding from component to the dom, a one way binding,
+      that is any changes in the dom are not reflected back in the component
+      this can be changed to a two-way binding which is preferred at other
+      places like forms.
+    -->
+    <img [src]="imageUrl"/>
+    <h2>The title is: {{ getTitle() }}</h2>
     <ul>
       <li *ngFor="let course of courses">
         {{ course }}
@@ -18,9 +33,15 @@ import { CoursesService } from "./courses.service";
   `,
 })
 export class CoursesComponent {
+  /*
+   * A note on property binding and interpolation
+   * 1. Property binding:
+   *      property of a dom element is binded to class's property
+   * */
   // Leaving this class empty for now 
   // Define a field "title"
   title: string = "List of courses";
+  imageUrl: string = "https://picsum.photos/400/";
   courses: string[];
   constructor(
     // When I pass service: CoursesService as a constructor's dependency,

@@ -1,0 +1,5 @@
+1. Now I will learn how to
+  1. Display data
+  2. Apply classes / styles dynamically
+  3. Format data using pipes
+  4. Handle Events
