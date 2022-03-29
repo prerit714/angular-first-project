@@ -51,6 +51,8 @@ import { CoursesService } from "./courses.service";
     <input type="text" (keyup.enter)="onKeyUpTwo()"/>
       <br>
     <input type="text" (keyup)="onKeyUpOne($event)"/>
+      <br>
+    <input type="text" (keyup.enter)="onKeyUpGetInputData($event)"/>
   `,
 })
 export class CoursesComponent {
@@ -89,6 +91,9 @@ export class CoursesComponent {
     //  To avoid this we must use something else...
     //  ie. Dependency Injection
     this.courses = service.getCourses();
+  }
+  onKeyUpGetInputData($event: any): void {
+    console.log($event.target.value);
   }
   getTitle(): string {
     return this.title;
