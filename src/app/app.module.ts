@@ -12,6 +12,7 @@ import { CoursesService } from './courses.service';
 import { AuthorsService } from './authors.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { SummaryPipe } from './summary.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 // This is a way to convert a normal class to a ngModule
 @NgModule({
@@ -22,7 +23,7 @@ import { SummaryPipe } from './summary.pipe';
     // without using the ng-generate command, as this will generate an error
     CourseComponent, 
     AuthorsComponent, // This line of code was added by "ng g c course" command
-    SummaryPipe, // Add the pipe component
+    SummaryPipe, FavoriteComponent, // Add the pipe component
   ],
   imports: [
     BrowserModule,
