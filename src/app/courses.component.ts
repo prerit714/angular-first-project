@@ -9,7 +9,7 @@ import { CoursesService } from "./courses.service";
   // Any valid JS expression is allowed between {{}}
   // We use directives to manipulate the DOM
   template: `
-    <h2>{{ "Titiles are " + getTitle() }}</h2>
+    <h2>{{ "The title is: " + getTitle() }}</h2>
     <ul>
       <li *ngFor="let course of courses">
         {{ course }}
