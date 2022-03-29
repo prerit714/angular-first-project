@@ -40,7 +40,8 @@ import { CoursesService } from "./courses.service";
     </table>
     <h2> A primary button </h2>
     <!-- Adding a bootstrap sytle to a button -->
-    <button class="btn btn-primary">A primary button</button>
+    <!-- Applying a class based on some condition -->
+    <button class="btn btn-primary" [class.active]="isActive">A primary button</button>
   `,
 })
 export class CoursesComponent {
@@ -56,6 +57,7 @@ export class CoursesComponent {
   courses: string[] = [""];
   colSpan: number = 2;
   buttonWidth: string = "100%";
+  isActive: boolean = true;
   constructor(
     // When I pass service: CoursesService as a constructor's dependency,
     // I want angular to inject an instance of service into this class
