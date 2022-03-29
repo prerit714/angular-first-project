@@ -29,6 +29,9 @@ import { CoursesService } from './courses.service';
     // will list CoursesService as a dependency
     // This is the second step after adding an instance in the constructor:CourseComponent
     CoursesService, // If you forgot this step, dependency injection will not work!
+    // During run-time, Angular will create an instance of CoursesService
+    // a singleton isntance, that will be shared by all the dependents
+    // (pretty cool!)
   ],
   bootstrap: [AppComponent]
 })

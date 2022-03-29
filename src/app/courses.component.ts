@@ -30,6 +30,9 @@ export class CoursesComponent {
     // application using some methods later on in the future, now I must let 
     // angular know to do this
     service: CoursesService
+    // To summarize: I created a service:CoursesService and passed it as a 
+    // dependency in the constructor:CoursesComponent which is what I told
+    // angular to add as a provider in the app.module.ts!
   ) {
     // using a service to initialize my courses field
     // const service = new CoursesService(); // get rid of this line, once

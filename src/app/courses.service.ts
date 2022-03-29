@@ -12,3 +12,17 @@ export class CoursesService {
     ];
   }
 }
+
+/*
+ *
+ * Since it is pretty tedious to make services manually, it is best to create  
+ * services using an ng command, (pretty convinient!)
+ *
+ * e.g. Create a service that will get data from a http-endpoint 
+ * $ ng g s email
+ * This will generate two files, one is a spec file for writing unit-tests
+ * and the other file is the actual service itself
+ * WARNING: Service will be generated but not provided by default
+ *
+ *
+ * */
