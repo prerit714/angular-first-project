@@ -10,3 +10,13 @@
 
 3. To test this code on a different machine, just do the following
   $ ?sudo npm install
+
+4. To make a component useful it should be capable to pass data in and out
+
+-- Below can be think of a syntax to pass in data(imageUrl) to a dom object img
+<img [src]="imageUrl" />
+-- Same can be said for below
+<button (click)="onClick()"> <button>
+
+-- I wish to make <favorite></favorite> component work like below
+<favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange()"></favorite>
