@@ -41,7 +41,9 @@ import { CoursesService } from "./courses.service";
     <h2> A primary button </h2>
     <!-- Adding a bootstrap sytle to a button -->
     <!-- Applying a class based on some condition -->
-    <button class="btn btn-primary" [class.active]="isActive">A primary button</button>
+    <button class="btn btn-primary" [class.active]="isActive">First Button</button>
+      <br>
+    <button class="btn btn-secondary" [style.backgroundColor]="!isActive?'blue':'purple'">Second Button</button>
   `,
 })
 export class CoursesComponent {
