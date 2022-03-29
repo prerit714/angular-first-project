@@ -19,7 +19,8 @@ import { AuthorsComponent } from './authors/authors.component';
     // Add to declarations array after importing your custom component
     CoursesComponent, // don't forget to declare a component, if you add one
     // without using the ng-generate command, as this will generate an error
-    CourseComponent, AuthorsComponent, // This line of code was added by "ng g c course" command
+    CourseComponent, 
+    AuthorsComponent, // This line of code was added by "ng g c course" command
   ],
   imports: [
     BrowserModule,

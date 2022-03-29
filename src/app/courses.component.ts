@@ -60,9 +60,20 @@ import { CoursesService } from "./courses.service";
     <!-- Let's use two-way binding to achieve the above -->
     <!-- Bind the input using property binding first -->
     <!-- Using banana in a box method [()] in old angular, in new angular use[]-->
-    <input type="text" [placeholder]="emailTwo" [(ngModel)]="emailTwo" (keyup.enter)="onKeyUpFour()" />
+    <input type="text" [(ngModel)]="emailTwo" (keyup.enter)="onKeyUpFour()" />
+      <br>
+    <h2> Now to output some course data </h2>
+    <ul>
+      <!-- Working with pipes -->
+      <li>Title is: {{ course.title | uppercase| lowercase | titlecase}}</li>
+      <li>Number of students are: {{ course.students | number }}</li>
+      <li>Rating is: {{ course.rating | number:'1.2-2' }}</li>
+      <li>Price is: {{ course.price | currency:"INR":true:"3.2-2" }}</li>
+      <li>Release Date is: {{ course.releaseDate | date:"shortDate" }}</li>
+    </ul>
   `,
 })
+
 export class CoursesComponent {
   /*
    * A note on property binding and interpolation
@@ -79,6 +90,7 @@ export class CoursesComponent {
   isActive: boolean = true;
   email: string = "foo@gmail.com";
   emailTwo: string = "bar@gmail.com";
+  course: any;
   constructor(
     // When I pass service: CoursesService as a constructor's dependency,
     // I want angular to inject an instance of service into this class
@@ -101,6 +113,13 @@ export class CoursesComponent {
     //  To avoid this we must use something else...
     //  ie. Dependency Injection
     this.courses = service.getCourses();
+    this.course = {
+      title: "The complete Angular Course",
+      rating: 4.9,
+      students: 5959,
+      price: 434.44,
+      releaseDate: new Date(2016, 3, 1)
+    };
   }
   onKeyUpFour(): void {
     if (this.emailTwo.length === 0) {
