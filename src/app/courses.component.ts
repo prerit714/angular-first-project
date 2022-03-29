@@ -101,11 +101,16 @@ export class CoursesComponent {
     // handler of onClickableButton button
     console.log("onClickableButton() is called!", $event);
   }
-  onDivClick($event: MouseEvent) {
+  onDivClick($event: MouseEvent): void {
     // div click handler
     // An event bubbles up the dom tree to the parent element
     // to avoid event bubbling, just call this method below
     $event.stopPropagation(); // important if you want to avoid bubbling
     console.log("onDivClick() is called!", $event);
+  }
+  onKeyUp($event: KeyboardEvent): void {
+    if ($event.key === "Enter") {
+      console.log("Enter was pressed!", $event);
+    }
   }
 }
