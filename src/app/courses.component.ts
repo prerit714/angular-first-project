@@ -48,6 +48,9 @@ import { CoursesService } from "./courses.service";
     <div (click)="onDivClick($event)">
       <button class="btn btn-secondary" (click)="onClickableButton($event)">Clickable Button</button>
     </div>
+    <input type="text" (keyup.enter)="onKeyUpTwo()"/>
+      <br>
+    <input type="text" (keyup)="onKeyUpOne($event)"/>
   `,
 })
 export class CoursesComponent {
@@ -108,9 +111,13 @@ export class CoursesComponent {
     $event.stopPropagation(); // important if you want to avoid bubbling
     console.log("onDivClick() is called!", $event);
   }
-  onKeyUp($event: KeyboardEvent): void {
+  onKeyUpOne($event: KeyboardEvent): void {
     if ($event.key === "Enter") {
       console.log("Enter was pressed!", $event);
     }
+  }
+  onKeyUpTwo() {
+    // There are two ways of handling key press events
+    console.log("Enter was entered!");
   }
 }
