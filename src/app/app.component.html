@@ -73,4 +73,10 @@
       'color': canSave ? 'white': 'black'
     }">button two
   </button>
+  <br>
+  <!-- Checking the working of safe traversal operator -->
+  <h3>You know nothing {{ task.assignee.firstName }} <span *ngIf="task.assignee">{{ task.assignee.lastName }}</span>
+  </h3>
+  <!-- Using safe traversal operator instead of (ngIf) -->
+  <!-- <h3> You know nothing {{ task.assignee?.firstName }}</h3> -->
 </body>

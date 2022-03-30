@@ -9,6 +9,15 @@ import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 export class AppComponent {
   // courses = [1, 2, 3, 4, 5]; // To show/hide part of a page, using a simple
   // array, in real world example this will be an array of course objects
+  task = {
+    title: "Leader of The Crows",
+    assignee: {
+      firstName: "John",
+      // Since last name is null, this will not be rendered
+      lastName: null
+    },
+    // assignee: null
+  };
   canSave: boolean = false;
   courses: any;
   tweet = {
