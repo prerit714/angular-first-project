@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   // This object is also sometimes referred to as meta-data
@@ -15,6 +15,9 @@ export class FavoriteComponent implements OnInit {
     "is-favorite"
   ) isFavorite: boolean = false;
 
+  // Initialize this to an instance of EventEmitter
+  @Output() change = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +25,9 @@ export class FavoriteComponent implements OnInit {
 
   onClick(): void {
     this.isFavorite = !this.isFavorite;
+    // Now to raise the event with .emit()
+    // also called as "publishing" an event
+    this.change.emit();
   }
 
 }

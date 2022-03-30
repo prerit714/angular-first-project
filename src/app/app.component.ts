@@ -11,4 +11,7 @@ export class AppComponent {
     isFavorite: true
   };
   title = 'angular-first-project';
+  onFavoriteChange() {
+    console.log("onFavoriteChange() is called!");
+  }
 }
