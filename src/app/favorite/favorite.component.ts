@@ -29,7 +29,8 @@ export class FavoriteComponent implements OnInit {
     // also called as "publishing" an event
     // Now to pass data to the calling component
     // This will be available in the app component
-    this.change.emit(this.isSelected);
+    // this.change.emit(this.isSelected);
+    this.change.emit({newValue: this.isSelected});
   }
 
 }
