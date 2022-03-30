@@ -16,7 +16,10 @@ export class FavoriteComponent implements OnInit {
   ) isSelected: boolean = false;
 
   // Initialize this to an instance of EventEmitter
-  @Output() change = new EventEmitter();
+  @Output(
+    // Using aliases clients of this component will never break
+    "change"
+  ) click = new EventEmitter();
 
   constructor() { }
 
@@ -30,7 +33,7 @@ export class FavoriteComponent implements OnInit {
     // Now to pass data to the calling component
     // This will be available in the app component
     // this.change.emit(this.isSelected);
-    this.change.emit({newValue: this.isSelected});
+    this.click.emit({newValue: this.isSelected});
   }
 
 }
