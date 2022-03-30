@@ -44,3 +44,23 @@
   ngSwitchCase
   ngClass
   ngStyle
+
+-- The leading asterisk
+
+<div *ngIf="courses.length > 0; else noCourses">
+  List of Courses
+</div>
+<ng-template #noCourses>
+  No course
+</ng-template>
+
+-- is translated to (by angular)
+
+<ng-template>
+  <div [ngIf]="courses.length > 0>
+    List of Courses
+  </div>
+<ng-template>
+<ng-template [ngif]="!(courses.length > 0)">
+  No course
+</ng-template>

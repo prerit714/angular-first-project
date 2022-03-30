@@ -1,1 +1,8 @@
-<span class="bi" [class.bi-diamond]="isSelected" [class.bi-diamond-fill]="!isSelected" (click)="onClick()"></span>
+<!-- <span class="bi" [class.bi-diamond]="isSelected" [class.bi-diamond-fill]="!isSelected" (click)="onClick()"></span> -->
+
+
+<!-- Here I will use ngClass to achieve the above, backtick strings won't work here -->
+<span class="bi" [ngClass]="{
+    'bi-diamond': isSelected,
+    'bi-diamond-fill': !isSelected
+  }" (click)="onClick()"></span>
