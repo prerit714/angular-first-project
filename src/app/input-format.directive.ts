@@ -1,4 +1,4 @@
-import { Directive, HostListener, ElementRef } from '@angular/core';
+import { Input, Directive, HostListener, ElementRef } from '@angular/core';
 
 @Directive({
   // app is prefixed to avoid any clashes
@@ -6,6 +6,9 @@ import { Directive, HostListener, ElementRef } from '@angular/core';
   selector: '[appInputFormat]'
 })
 export class InputFormatDirective {
+  // To make my directive more useable, I will use an input field
+  @Input("format")
+  format: string = "";
 
   constructor(private el: ElementRef) {
     // this el is a service defined in angular , gives access to DOM object
@@ -25,10 +28,15 @@ export class InputFormatDirective {
     // this here for my reference
     console.log("onBlur() is called!");
     const value: string = this.el.nativeElement.value;
-    this.el.nativeElement.value = value.toLowerCase();
     // Black box this behaviour when you wish to lower-case anything that
     // User enteres into the text-field
     // Angular seems good :)
+    if (this.format === "lowercase") {
+      this.el.nativeElement.value = value.toLowerCase();
+    } else {
+      this.el.nativeElement.value = value.toUpperCase();
+    }
   }
+
 
 }
