@@ -24,6 +24,7 @@
   </bootstrap-panel>
   <like [likes-count]="tweet.likesCount" [is-active]="tweet.isLiked"></like>
   <!-- To see the working of ngIf directive (with angular4+ syntax) -->
+  <br>
   <div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
   <ng-template #coursesList>
     <h2>List of Courses</h2>
@@ -44,4 +45,18 @@
   <div [hidden]="courses.length > 0">
     <h2>No courses2 yet!</h2>
   </div>
+  <br>
+  <!-- Using ngFor -->
+  <h2>Below are some courses</h2>
+  <ul>
+    <!-- 
+      using features of exported values by ngFor
+      -- some of them are
+      index: number, first: boolean, last: boolean, even: boolean, odd: boolean
+    -->
+    <li *ngFor="let course of courses; index as idx; even as isEven;">
+      <!-- idx can be interpolated -->
+      {{ idx }} - {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
+    </li>
+  </ul>
 </body>
