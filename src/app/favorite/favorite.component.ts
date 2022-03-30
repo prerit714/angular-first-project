@@ -4,9 +4,21 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   // This object is also sometimes referred to as meta-data
   selector: 'favorite',
   templateUrl: './favorite.component.html',
+  // There are three ways to apply styles
+  // 1. styleUrls, styles: ['', '', ...], and <styles> in template
   styleUrls: ['./favorite.component.css'],
+  // which so ever styleUrls or styles is on the last of this meta-data
+  // angular will pick up that sytles, and previous rules
+  // are over-ridden
+  styles: [
+    `
+    .bi {
+      color: blue;
+    }
+    `
+  ],
 })
-export class FavoriteComponent implements OnInit {
+export class FavoriteComponent {
 
   // Task is to mark fields as input properties/output properties
   // We use Input decorator to make a field as an input property
@@ -22,9 +34,6 @@ export class FavoriteComponent implements OnInit {
   ) click = new EventEmitter();
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   onClick(): void {
     this.isSelected = !this.isSelected;
