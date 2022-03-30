@@ -14,6 +14,7 @@ import { AuthorsComponent } from './authors/authors.component';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PanelComponent } from './panel/panel.component';
+import { LikeComponent } from './like/like.component';
 
 // This is a way to convert a normal class to a ngModule
 @NgModule({
@@ -24,7 +25,7 @@ import { PanelComponent } from './panel/panel.component';
     // without using the ng-generate command, as this will generate an error
     CourseComponent, 
     AuthorsComponent, // This line of code was added by "ng g c course" command
-    SummaryPipe, FavoriteComponent, PanelComponent, // Add the pipe component
+    SummaryPipe, FavoriteComponent, PanelComponent, LikeComponent, // Add the pipe component
   ],
   imports: [
     BrowserModule,

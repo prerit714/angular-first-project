@@ -5,23 +5,22 @@
   <favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
   <h2>Adding a panel component (made via bootstrap)</h2>
   <!-- The idea is to use ngContent -->
-  <div>
-    <bootstrap-panel>
-      <!-- Remember you dont need a selector in ng-content if you have only one ng-content -->
-      <ng-container class="heading">Heading of Card</ng-container>
-      <!--
+  <bootstrap-panel>
+    <!-- Remember you dont need a selector in ng-content if you have only one ng-content -->
+    <ng-container class="heading">Heading of Card</ng-container>
+    <!--
         problem: There is a lot of extra markup which is not required at all
         to avoid this use ngContainer on the markup you want to only serve as a container
         At run time angular will only render the content of this container
       -->
-      <ng-container class="title">Sample title</ng-container>
-      <ng-container class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dicta rem ducimus
-        eaque quia
-        perspiciatis facilis est libero veritatis similique!</ng-container>
-      <!-- 
+    <ng-container class="title">Sample title</ng-container>
+    <ng-container class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dicta rem ducimus
+      eaque quia
+      perspiciatis facilis est libero veritatis similique!</ng-container>
+    <!-- 
         Using ng-container is a cleaner way of achieving the markup without using
         any un-nessary markup at all (kinda cool!)
       -->
-    </bootstrap-panel>
-  </div>
+  </bootstrap-panel>
+  <like [likes-count]="tweet.likesCount" [is-active]="tweet.isLiked"></like>
 </body>
