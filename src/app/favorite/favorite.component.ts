@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   // This object is also sometimes referred to as meta-data
@@ -17,6 +17,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     }
     `
   ],
+  // Now to emulate shadow DOM, ViewEncapsulation is an enum object
+  // .Emulated for browsers that don't have shadow dom, angular will then implement
+  // it with a trick, second is .Native for browsers who support shadow dom
+  encapsulation: ViewEncapsulation.Emulated,
+  // Default is .Emulated (work will 99.9% of the cases)
+  // Use inspect element to check the elements
 })
 export class FavoriteComponent {
 

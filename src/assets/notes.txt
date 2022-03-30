@@ -20,3 +20,19 @@
 
 -- I wish to make <favorite></favorite> component work like below
 <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange()"></favorite>
+
+-- Shadow DOM
+  Allows us to apply scoped styles to elements without bleeding out to the
+  outer world, ( old browsers don't support this )
+
+
+  var el = document.querySelector("foo");
+
+  // create shadow dom, by this styles are scoped only to this
+  // it will not leak out
+  var root = el.createShadowRoot();
+
+  root.innerHTML = `
+    <style> h1 { color: red } </style>
+    <h1> Hello world! </h1>
+  `;
