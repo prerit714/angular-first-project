@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-
-interface FavoriteChangedEventArgs {
-  newValue: boolean;
-}
+import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 
 @Component({
   selector: 'app-root',
