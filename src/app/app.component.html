@@ -31,4 +31,17 @@
   <ng-template #noCourses>
     <h2>No courses yet!</h2>
   </ng-template>
+  <!-- 
+    Second way to hide some content using property binding
+    Use ngIf for cases you have large dom tree, since it can be memory intensive
+    else if you have a small dom tree, opt for this hidden property method.
+    (I like ngIf better)
+    For toggling things, use hidden since ngIf may be costly too (that is same premise)
+  -->
+  <div [hidden]="courses.length === 0">
+    <h2>List of Courses2</h2>
+  </div>
+  <div [hidden]="courses.length > 0">
+    <h2>No courses2 yet!</h2>
+  </div>
 </body>
