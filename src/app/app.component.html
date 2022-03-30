@@ -48,6 +48,7 @@
   <br>
   <!-- Using ngFor -->
   <h2>Below are some courses</h2>
+  <button class="btn btn-primary" (click)="onAdd()">Add</button>
   <ul>
     <!-- 
       using features of exported values by ngFor
@@ -57,6 +58,7 @@
     <li *ngFor="let course of courses; index as idx; even as isEven;">
       <!-- idx can be interpolated -->
       {{ idx }} - {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
+      <button class="btn btn-secondary" (click)="onRemove(course)">Remove</button>
     </li>
   </ul>
 </body>

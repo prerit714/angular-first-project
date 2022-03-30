@@ -29,4 +29,22 @@ export class AppComponent {
   onFavoriteChange(newArgs: FavoriteChangedEventArgs): void {
     console.log("onFavoriteChange() is called with: ", newArgs);
   }
+  onAdd(): void {
+    // For adding courses
+    this.courses.push({
+      id: Math.ceil(Math.random() * 1000),
+      name: "Chadology"
+    });
+    // IMPORTANT
+    // Angular has a change detection mechanism for Ajax-Request,
+    // Button clicks and timers
+    // The dom will be rendered again
+  }
+  onRemove(course: {id: number, name: string}): void {
+    // For removing courses
+    // You can blackboxify the logic here
+    const indexOfCourseToDelete = this.courses.indexOf(course);
+    this.courses.splice(indexOfCourseToDelete, 1);
+    // THIS WORKS!!!
+  }
 }
