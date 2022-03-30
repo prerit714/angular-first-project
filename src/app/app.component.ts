@@ -7,6 +7,8 @@ import { FavoriteChangedEventArgs } from './favorite/favorite.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  courses = [1, 2, 3, 4, 5]; // To show/hide part of a page, using a simple
+  // array, in real world example this will be an array of course objects
   tweet = {
     body: "Hello I am Prerit Dayal!",
     likesCount: 20,

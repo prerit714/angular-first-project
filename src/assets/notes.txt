@@ -36,3 +36,11 @@
     <style> h1 { color: red } </style>
     <h1> Hello world! </h1>
   `;
+
+-- Now that I am done with basics, Moving on to Directives
+-- Below are default ng directives
+  ngFor
+  ngIf
+  ngSwitchCase
+  ngClass
+  ngStyle

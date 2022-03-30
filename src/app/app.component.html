@@ -23,4 +23,12 @@
       -->
   </bootstrap-panel>
   <like [likes-count]="tweet.likesCount" [is-active]="tweet.isLiked"></like>
+  <!-- To see the working of ngIf directive (with angular4+ syntax) -->
+  <div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+  <ng-template #coursesList>
+    <h2>List of Courses</h2>
+  </ng-template>
+  <ng-template #noCourses>
+    <h2>No courses yet!</h2>
+  </ng-template>
 </body>
