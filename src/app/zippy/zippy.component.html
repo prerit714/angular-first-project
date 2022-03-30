@@ -1,0 +1,14 @@
+<div class="zippy">
+  <div class="zippy-heading" [class.expanded]="isExpanded" (click)="onClick()">
+    {{ title }}
+    <!-- <i class="bi" [ngClass]="{ -->
+    <!--   'bi-chevron-up': isExpanded, -->
+    <!--   'bi-chevron-down': !isExpanded -->
+    <!-- }" ]></i> -->
+  </div>
+  <!-- Render the body below only if zippy is expanded -->
+  <div *ngIf="isExpanded" class="zippy-body">
+    <!-- ng-content to inject html from outside (remember?) -->
+    <ng-content></ng-content>
+  </div>
+</div>
