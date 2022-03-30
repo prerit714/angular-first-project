@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+interface FavoriteChangedEventArgs {
+  newValue: boolean;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +15,8 @@ export class AppComponent {
     isFavorite: true
   };
   title = 'angular-first-project';
-  onFavoriteChange(newArgs: Object): void {
+  // Could have also used an interface 
+  onFavoriteChange(newArgs: FavoriteChangedEventArgs): void {
     console.log("onFavoriteChange() is called with: ", newArgs);
   }
 }
