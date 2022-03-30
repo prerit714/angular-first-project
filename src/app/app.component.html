@@ -3,4 +3,15 @@
   <courses></courses>
   <authors></authors>
   <favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
+  <h2>Adding a panel component (made via bootstrap)</h2>
+  <!-- The idea is to use ngContent -->
+  <div>
+    <bootstrap-panel>
+      <!-- Remember you dont need a selector in ng-content if you have only one ng-content -->
+      <div class="heading">Heading of Card</div>
+      <div class="title">Sample title</div>
+      <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dicta rem ducimus eaque quia
+        perspiciatis facilis est libero veritatis similique!</div>
+    </bootstrap-panel>
+  </div>
 </body>
