@@ -7,7 +7,10 @@ import { Input, Directive, HostListener, ElementRef } from '@angular/core';
 })
 export class InputFormatDirective {
   // To make my directive more useable, I will use an input field
-  @Input("format")
+  // @Input("format")
+  @Input("appInputFormat")
+  // The line above will let me pass data using
+  // [appInputFormat]="'uppercase'" instead of <appInputFormat [format]="'uppercase'">
   format: string = "";
 
   constructor(private el: ElementRef) {
@@ -32,6 +35,7 @@ export class InputFormatDirective {
     // User enteres into the text-field
     // Angular seems good :)
     if (this.format === "lowercase") {
+      // Changing this condition will revert the case
       this.el.nativeElement.value = value.toLowerCase();
     } else {
       this.el.nativeElement.value = value.toUpperCase();

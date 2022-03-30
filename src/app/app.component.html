@@ -81,10 +81,16 @@
   <!-- <h3> You know nothing {{ task.assignee?.firstName }}</h3> -->
   <h2>Now to use a custom made directive</h2>
   <div class="input-group input-group-sm mb-3">
+    <!-- <div class="input-group-prepend"> -->
+    <!--   <span class="input-group-text" id="inputGroup-sizing-sm">Small</span> -->
+    <!-- </div> -->
+    <!-- <input appInputFormat [format]="'uppercase'" type="text" class="form-control" aria-label="Small" -->
+    <!--   aria-describedby="inputGroup-sizing-sm"> -->
+    <!-- <br> -->
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
     </div>
-    <input appInputFormat [format]="'uppercase'" type="text" class="form-control" aria-label="Small"
+    <input [appInputFormat]="'uppercase'" type="text" class="form-control" aria-label="Small"
       aria-describedby="inputGroup-sizing-sm">
   </div>
 
