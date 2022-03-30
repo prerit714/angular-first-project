@@ -13,7 +13,7 @@ export class FavoriteComponent implements OnInit {
   @Input(
     //define an alias for this name
     "is-favorite"
-  ) isFavorite: boolean = false;
+  ) isSelected: boolean = false;
 
   // Initialize this to an instance of EventEmitter
   @Output() change = new EventEmitter();
@@ -24,10 +24,12 @@ export class FavoriteComponent implements OnInit {
   }
 
   onClick(): void {
-    this.isFavorite = !this.isFavorite;
+    this.isSelected = !this.isSelected;
     // Now to raise the event with .emit()
     // also called as "publishing" an event
-    this.change.emit();
+    // Now to pass data to the calling component
+    // This will be available in the app component
+    this.change.emit(this.isSelected);
   }
 
 }

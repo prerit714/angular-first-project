@@ -2,5 +2,5 @@
   <h1>This is how angular renders components</h1>
   <courses></courses>
   <authors></authors>
-  <favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange()"></favorite>
+  <favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
 </body>
