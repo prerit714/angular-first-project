@@ -15,6 +15,7 @@ import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { InputFormatDirective } from './input-format.directive';
 
 // This is a way to convert a normal class to a ngModule
 @NgModule({
@@ -25,7 +26,7 @@ import { LikeComponent } from './like/like.component';
     // without using the ng-generate command, as this will generate an error
     CourseComponent, 
     AuthorsComponent, // This line of code was added by "ng g c course" command
-    SummaryPipe, FavoriteComponent, PanelComponent, LikeComponent, // Add the pipe component
+    SummaryPipe, FavoriteComponent, PanelComponent, LikeComponent, InputFormatDirective, // Add the pipe component
   ],
   imports: [
     BrowserModule,
