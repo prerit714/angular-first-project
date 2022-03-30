@@ -46,6 +46,8 @@
     <h2>No courses2 yet!</h2>
   </div>
   <br>
+  <!-- Understanding trackBy -->
+  <button class="btn btn-primary" (click)="loadCourses()">Initialize the Courses</button>
   <!-- Using ngFor -->
   <h2>Below are some courses</h2>
   <button class="btn btn-primary" (click)="onAdd()">Add</button>
@@ -55,7 +57,7 @@
       -- some of them are
       index: number, first: boolean, last: boolean, even: boolean, odd: boolean
     -->
-    <li *ngFor="let course of courses; index as idx; even as isEven;">
+    <li *ngFor="let course of courses; trackBy: trackCourse; index as idx; even as isEven;">
       <!-- idx can be interpolated -->
       {{ idx }} - {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
       <button class="btn btn-secondary" (click)="onRemove(course)">Remove</button>
